@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="252359f7b70241a18e39d56d89c8290f" Name="Diagram1">
+        <EntityTypeShape EntityType="Wyp_sam_lok_v1Model.KLIENCI" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Wyp_sam_lok_v1Model.PRACOWNICY" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Wyp_sam_lok_v1Model.SAMOCHODY" Width="1.5" PointX="3" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Wyp_sam_lok_v1Model.SIEDZIBY" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Wyp_sam_lok_v1Model.sysdiagrams" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Wyp_sam_lok_v1Model.WYPOZYCZENIA" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="Wyp_sam_lok_v1Model.FK_WYPOZYCZENIA_KLIENCI" ManuallyRouted="false" />
+        <AssociationConnector Association="Wyp_sam_lok_v1Model.FK_PRACOWNICY_SIEDZIBY" ManuallyRouted="false" />
+        <AssociationConnector Association="Wyp_sam_lok_v1Model.FK_WYPOZYCZENIA_PRACOWNICY_ODD" ManuallyRouted="false" />
+        <AssociationConnector Association="Wyp_sam_lok_v1Model.FK_WYPOZYCZENIA_PRACOWNICY_WYP" ManuallyRouted="false" />
+        <AssociationConnector Association="Wyp_sam_lok_v1Model.FK_WYPOZYCZENIA_SAMOCHODY1" ManuallyRouted="false" />
+        <AssociationConnector Association="Wyp_sam_lok_v1Model.FK_WYPOZYCZENIA_SIEDZIBY_ODD" ManuallyRouted="false" />
+        <AssociationConnector Association="Wyp_sam_lok_v1Model.FK_WYPOZYCZENIA_SIEDZIBY_WYP" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
