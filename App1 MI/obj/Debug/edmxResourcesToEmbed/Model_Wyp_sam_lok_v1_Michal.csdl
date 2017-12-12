@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Wyp_sam_lok_v1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="KLIENCI">
+    <Key>
+      <PropertyRef Name="IDklienta" />
+    </Key>
+    <Property Name="IDklienta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nazwisko" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Imie" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Miasto" Type="String" MaxLength="24" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Ulica" Type="String" MaxLength="24" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nr_domu" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Nr_telefonu" Type="String" MaxLength="16" FixedLength="true" Unicode="false" />
+    <Property Name="Firma" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="WYPOZYCZENIA" Relationship="Self.FK_WYPOZYCZENIA_KLIENCI" FromRole="KLIENCI" ToRole="WYPOZYCZENIA" />
+  </EntityType>
+  <EntityType Name="PRACOWNICY">
+    <Key>
+      <PropertyRef Name="IDpracownika" />
+    </Key>
+    <Property Name="IDpracownika" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDsiedziby" Type="Int32" Nullable="false" />
+    <Property Name="Nazwisko" Type="Binary" MaxLength="20" FixedLength="false" Nullable="false" />
+    <Property Name="Imie" Type="Binary" MaxLength="20" FixedLength="false" Nullable="false" />
+    <Property Name="Data_zatrudnienia" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Nr_telefonu" Type="String" MaxLength="16" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="SIEDZIBY" Relationship="Self.FK_PRACOWNICY_SIEDZIBY" FromRole="PRACOWNICY" ToRole="SIEDZIBY" />
+    <NavigationProperty Name="WYPOZYCZENIA" Relationship="Self.FK_WYPOZYCZENIA_PRACOWNICY_ODD" FromRole="PRACOWNICY" ToRole="WYPOZYCZENIA" />
+    <NavigationProperty Name="WYPOZYCZENIA1" Relationship="Self.FK_WYPOZYCZENIA_PRACOWNICY_WYP" FromRole="PRACOWNICY" ToRole="WYPOZYCZENIA" />
+  </EntityType>
+  <EntityType Name="SAMOCHODY">
+    <Key>
+      <PropertyRef Name="IDsamochodu" />
+    </Key>
+    <Property Name="IDsamochodu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Marka" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Typ" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Rok_produkcji" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Kolor" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Pojemnosc_silnika" Type="Double" Nullable="false" />
+    <Property Name="Przebieg" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="WYPOZYCZENIA" Relationship="Self.FK_WYPOZYCZENIA_SAMOCHODY1" FromRole="SAMOCHODY" ToRole="WYPOZYCZENIA" />
+  </EntityType>
+  <EntityType Name="SIEDZIBY">
+    <Key>
+      <PropertyRef Name="IDsiedziby" />
+    </Key>
+    <Property Name="IDsiedziby" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Miasto" Type="String" MaxLength="24" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Ulica" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nr_domu" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Kod_pocztowy" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Nr_telefonu" Type="String" MaxLength="16" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="PRACOWNICY" Relationship="Self.FK_PRACOWNICY_SIEDZIBY" FromRole="SIEDZIBY" ToRole="PRACOWNICY" />
+    <NavigationProperty Name="WYPOZYCZENIA" Relationship="Self.FK_WYPOZYCZENIA_SIEDZIBY_ODD" FromRole="SIEDZIBY" ToRole="WYPOZYCZENIA" />
+    <NavigationProperty Name="WYPOZYCZENIA1" Relationship="Self.FK_WYPOZYCZENIA_SIEDZIBY_WYP" FromRole="SIEDZIBY" ToRole="WYPOZYCZENIA" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="WYPOZYCZENIA">
+    <Key>
+      <PropertyRef Name="IDwypozyczenia" />
+    </Key>
+    <Property Name="IDwypozyczenia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDklienta" Type="Int32" Nullable="false" />
+    <Property Name="IDsamochodu" Type="Int32" Nullable="false" />
+    <Property Name="IDpracownika_wyp" Type="Int32" Nullable="false" />
+    <Property Name="IDsiedziby_wyp" Type="Int32" Nullable="false" />
+    <Property Name="Data_wyp" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="IDpracownika_odd" Type="Int32" />
+    <Property Name="IDsiedziby_odd" Type="Int32" />
+    <Property Name="Data_odd" Type="DateTime" Precision="0" />
+    <Property Name="Cena_jedn" Type="Double" Nullable="false" />
+    <NavigationProperty Name="KLIENCI" Relationship="Self.FK_WYPOZYCZENIA_KLIENCI" FromRole="WYPOZYCZENIA" ToRole="KLIENCI" />
+    <NavigationProperty Name="PRACOWNICY" Relationship="Self.FK_WYPOZYCZENIA_PRACOWNICY_ODD" FromRole="WYPOZYCZENIA" ToRole="PRACOWNICY" />
+    <NavigationProperty Name="PRACOWNICY1" Relationship="Self.FK_WYPOZYCZENIA_PRACOWNICY_WYP" FromRole="WYPOZYCZENIA" ToRole="PRACOWNICY" />
+    <NavigationProperty Name="SAMOCHODY" Relationship="Self.FK_WYPOZYCZENIA_SAMOCHODY1" FromRole="WYPOZYCZENIA" ToRole="SAMOCHODY" />
+    <NavigationProperty Name="SIEDZIBY" Relationship="Self.FK_WYPOZYCZENIA_SIEDZIBY_ODD" FromRole="WYPOZYCZENIA" ToRole="SIEDZIBY" />
+    <NavigationProperty Name="SIEDZIBY1" Relationship="Self.FK_WYPOZYCZENIA_SIEDZIBY_WYP" FromRole="WYPOZYCZENIA" ToRole="SIEDZIBY" />
+  </EntityType>
+  <Association Name="FK_WYPOZYCZENIA_KLIENCI">
+    <End Role="KLIENCI" Type="Self.KLIENCI" Multiplicity="1" />
+    <End Role="WYPOZYCZENIA" Type="Self.WYPOZYCZENIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KLIENCI">
+        <PropertyRef Name="IDklienta" />
+      </Principal>
+      <Dependent Role="WYPOZYCZENIA">
+        <PropertyRef Name="IDklienta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PRACOWNICY_SIEDZIBY">
+    <End Role="SIEDZIBY" Type="Self.SIEDZIBY" Multiplicity="1" />
+    <End Role="PRACOWNICY" Type="Self.PRACOWNICY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SIEDZIBY">
+        <PropertyRef Name="IDsiedziby" />
+      </Principal>
+      <Dependent Role="PRACOWNICY">
+        <PropertyRef Name="IDsiedziby" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WYPOZYCZENIA_PRACOWNICY_ODD">
+    <End Role="PRACOWNICY" Type="Self.PRACOWNICY" Multiplicity="0..1" />
+    <End Role="WYPOZYCZENIA" Type="Self.WYPOZYCZENIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRACOWNICY">
+        <PropertyRef Name="IDpracownika" />
+      </Principal>
+      <Dependent Role="WYPOZYCZENIA">
+        <PropertyRef Name="IDpracownika_odd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WYPOZYCZENIA_PRACOWNICY_WYP">
+    <End Role="PRACOWNICY" Type="Self.PRACOWNICY" Multiplicity="1" />
+    <End Role="WYPOZYCZENIA" Type="Self.WYPOZYCZENIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRACOWNICY">
+        <PropertyRef Name="IDpracownika" />
+      </Principal>
+      <Dependent Role="WYPOZYCZENIA">
+        <PropertyRef Name="IDpracownika_wyp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WYPOZYCZENIA_SAMOCHODY1">
+    <End Role="SAMOCHODY" Type="Self.SAMOCHODY" Multiplicity="1" />
+    <End Role="WYPOZYCZENIA" Type="Self.WYPOZYCZENIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SAMOCHODY">
+        <PropertyRef Name="IDsamochodu" />
+      </Principal>
+      <Dependent Role="WYPOZYCZENIA">
+        <PropertyRef Name="IDsamochodu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WYPOZYCZENIA_SIEDZIBY_ODD">
+    <End Role="SIEDZIBY" Type="Self.SIEDZIBY" Multiplicity="0..1" />
+    <End Role="WYPOZYCZENIA" Type="Self.WYPOZYCZENIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SIEDZIBY">
+        <PropertyRef Name="IDsiedziby" />
+      </Principal>
+      <Dependent Role="WYPOZYCZENIA">
+        <PropertyRef Name="IDsiedziby_odd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WYPOZYCZENIA_SIEDZIBY_WYP">
+    <End Role="SIEDZIBY" Type="Self.SIEDZIBY" Multiplicity="1" />
+    <End Role="WYPOZYCZENIA" Type="Self.WYPOZYCZENIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SIEDZIBY">
+        <PropertyRef Name="IDsiedziby" />
+      </Principal>
+      <Dependent Role="WYPOZYCZENIA">
+        <PropertyRef Name="IDsiedziby_wyp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Wyp_sam_lok_v1Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="KLIENCI" EntityType="Self.KLIENCI" />
+    <EntitySet Name="PRACOWNICY" EntityType="Self.PRACOWNICY" />
+    <EntitySet Name="SAMOCHODY" EntityType="Self.SAMOCHODY" />
+    <EntitySet Name="SIEDZIBY" EntityType="Self.SIEDZIBY" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="WYPOZYCZENIA" EntityType="Self.WYPOZYCZENIA" />
+    <AssociationSet Name="FK_WYPOZYCZENIA_KLIENCI" Association="Self.FK_WYPOZYCZENIA_KLIENCI">
+      <End Role="KLIENCI" EntitySet="KLIENCI" />
+      <End Role="WYPOZYCZENIA" EntitySet="WYPOZYCZENIA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PRACOWNICY_SIEDZIBY" Association="Self.FK_PRACOWNICY_SIEDZIBY">
+      <End Role="SIEDZIBY" EntitySet="SIEDZIBY" />
+      <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WYPOZYCZENIA_PRACOWNICY_ODD" Association="Self.FK_WYPOZYCZENIA_PRACOWNICY_ODD">
+      <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
+      <End Role="WYPOZYCZENIA" EntitySet="WYPOZYCZENIA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WYPOZYCZENIA_PRACOWNICY_WYP" Association="Self.FK_WYPOZYCZENIA_PRACOWNICY_WYP">
+      <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
+      <End Role="WYPOZYCZENIA" EntitySet="WYPOZYCZENIA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WYPOZYCZENIA_SAMOCHODY1" Association="Self.FK_WYPOZYCZENIA_SAMOCHODY1">
+      <End Role="SAMOCHODY" EntitySet="SAMOCHODY" />
+      <End Role="WYPOZYCZENIA" EntitySet="WYPOZYCZENIA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WYPOZYCZENIA_SIEDZIBY_ODD" Association="Self.FK_WYPOZYCZENIA_SIEDZIBY_ODD">
+      <End Role="SIEDZIBY" EntitySet="SIEDZIBY" />
+      <End Role="WYPOZYCZENIA" EntitySet="WYPOZYCZENIA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WYPOZYCZENIA_SIEDZIBY_WYP" Association="Self.FK_WYPOZYCZENIA_SIEDZIBY_WYP">
+      <End Role="SIEDZIBY" EntitySet="SIEDZIBY" />
+      <End Role="WYPOZYCZENIA" EntitySet="WYPOZYCZENIA" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

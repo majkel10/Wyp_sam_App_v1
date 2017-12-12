@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Wyp_sam_lok_v1ModelStoreContainer" CdmEntityContainer="Wyp_sam_lok_v1Entities">
+    <EntitySetMapping Name="KLIENCI">
+      <EntityTypeMapping TypeName="Wyp_sam_lok_v1Model.KLIENCI">
+        <MappingFragment StoreEntitySet="KLIENCI">
+          <ScalarProperty Name="IDklienta" ColumnName="IDklienta" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Miasto" ColumnName="Miasto" />
+          <ScalarProperty Name="Ulica" ColumnName="Ulica" />
+          <ScalarProperty Name="Nr_domu" ColumnName="Nr_domu" />
+          <ScalarProperty Name="Nr_telefonu" ColumnName="Nr_telefonu" />
+          <ScalarProperty Name="Firma" ColumnName="Firma" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRACOWNICY">
+      <EntityTypeMapping TypeName="Wyp_sam_lok_v1Model.PRACOWNICY">
+        <MappingFragment StoreEntitySet="PRACOWNICY">
+          <ScalarProperty Name="IDpracownika" ColumnName="IDpracownika" />
+          <ScalarProperty Name="IDsiedziby" ColumnName="IDsiedziby" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Data_zatrudnienia" ColumnName="Data_zatrudnienia" />
+          <ScalarProperty Name="Nr_telefonu" ColumnName="Nr_telefonu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SAMOCHODY">
+      <EntityTypeMapping TypeName="Wyp_sam_lok_v1Model.SAMOCHODY">
+        <MappingFragment StoreEntitySet="SAMOCHODY">
+          <ScalarProperty Name="IDsamochodu" ColumnName="IDsamochodu" />
+          <ScalarProperty Name="Marka" ColumnName="Marka" />
+          <ScalarProperty Name="Typ" ColumnName="Typ" />
+          <ScalarProperty Name="Rok_produkcji" ColumnName="Rok_produkcji" />
+          <ScalarProperty Name="Kolor" ColumnName="Kolor" />
+          <ScalarProperty Name="Pojemnosc_silnika" ColumnName="Pojemnosc_silnika" />
+          <ScalarProperty Name="Przebieg" ColumnName="Przebieg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIEDZIBY">
+      <EntityTypeMapping TypeName="Wyp_sam_lok_v1Model.SIEDZIBY">
+        <MappingFragment StoreEntitySet="SIEDZIBY">
+          <ScalarProperty Name="IDsiedziby" ColumnName="IDsiedziby" />
+          <ScalarProperty Name="Miasto" ColumnName="Miasto" />
+          <ScalarProperty Name="Ulica" ColumnName="Ulica" />
+          <ScalarProperty Name="Nr_domu" ColumnName="Nr_domu" />
+          <ScalarProperty Name="Kod_pocztowy" ColumnName="Kod_pocztowy" />
+          <ScalarProperty Name="Nr_telefonu" ColumnName="Nr_telefonu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="Wyp_sam_lok_v1Model.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WYPOZYCZENIA">
+      <EntityTypeMapping TypeName="Wyp_sam_lok_v1Model.WYPOZYCZENIA">
+        <MappingFragment StoreEntitySet="WYPOZYCZENIA">
+          <ScalarProperty Name="IDwypozyczenia" ColumnName="IDwypozyczenia" />
+          <ScalarProperty Name="IDklienta" ColumnName="IDklienta" />
+          <ScalarProperty Name="IDsamochodu" ColumnName="IDsamochodu" />
+          <ScalarProperty Name="IDpracownika_wyp" ColumnName="IDpracownika_wyp" />
+          <ScalarProperty Name="IDsiedziby_wyp" ColumnName="IDsiedziby_wyp" />
+          <ScalarProperty Name="Data_wyp" ColumnName="Data_wyp" />
+          <ScalarProperty Name="IDpracownika_odd" ColumnName="IDpracownika_odd" />
+          <ScalarProperty Name="IDsiedziby_odd" ColumnName="IDsiedziby_odd" />
+          <ScalarProperty Name="Data_odd" ColumnName="Data_odd" />
+          <ScalarProperty Name="Cena_jedn" ColumnName="Cena_jedn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

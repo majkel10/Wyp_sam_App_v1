@@ -1,0 +1,15 @@
+c:\users\student\documents\visual studio 2015\Projects\App1 MI\App1 MI\bin\Debug\App1 MI.exe.config
+c:\users\student\documents\visual studio 2015\Projects\App1 MI\App1 MI\bin\Debug\App1 MI.exe
+c:\users\student\documents\visual studio 2015\Projects\App1 MI\App1 MI\bin\Debug\App1 MI.pdb
+c:\users\student\documents\visual studio 2015\Projects\App1 MI\App1 MI\obj\Debug\App1_MI.Properties.Resources.resources
+c:\users\student\documents\visual studio 2015\Projects\App1 MI\App1 MI\obj\Debug\App1 MI.csproj.GenerateResource.Cache
+c:\users\student\documents\visual studio 2015\Projects\App1 MI\App1 MI\obj\Debug\App1 MI.exe
+c:\users\student\documents\visual studio 2015\Projects\App1 MI\App1 MI\obj\Debug\App1 MI.pdb
+C:\Users\student\Documents\Visual Studio 2015\Projects\App1 MI\App1 MI\obj\Debug\App1_MI.Form_main.resources
+C:\Users\student\Documents\Visual Studio 2015\Projects\App1 MI\App1 MI\obj\Debug\App1_MI.Form_samochody.resources
+C:\Users\student\Documents\Visual Studio 2015\Projects\App1 MI\App1 MI\bin\Debug\MaterialSkin.dll
+C:\Users\student\Documents\Visual Studio 2015\Projects\App1 MI\App1 MI\bin\Debug\EntityFramework.dll
+C:\Users\student\Documents\Visual Studio 2015\Projects\App1 MI\App1 MI\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\student\Documents\Visual Studio 2015\Projects\App1 MI\App1 MI\bin\Debug\EntityFramework.xml
+C:\Users\student\Documents\Visual Studio 2015\Projects\App1 MI\App1 MI\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\student\Documents\Visual Studio 2015\Projects\App1 MI\App1 MI\obj\Debug\App1 MI.csprojResolveAssemblyReference.cache
